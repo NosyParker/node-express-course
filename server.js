@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 
 
 const app = express();
-app.use(bodyParser,json());
+app.use(bodyParser.json())
 
 
 const mockUserData = [
@@ -31,7 +31,7 @@ app.get("/users/:id", (req, res) => {
 });
 
 
-app.post("/login", (res, req) => {
+app.post("/login", (req, res) => {
 
     const username = req.body.username;
     const password = req.body.password;
@@ -52,6 +52,7 @@ app.post("/login", (res, req) => {
         });
     }
 });
+
 
 app.listen(8000, function() {
     console.log("server is running");
